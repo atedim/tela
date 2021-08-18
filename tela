@@ -21,7 +21,7 @@ then
     	echo "Executar com parametro instala." 
 	exit
 else
-    echo "Verificaçoes iniciais concluidas."
+    	echo "Verificaçoes iniciais concluidas."
 ###Testa primeira execução###
 
 
@@ -146,3 +146,5 @@ case $1 in
 		echo
 		exit 1
 esac
+
+
