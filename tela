@@ -14,7 +14,7 @@ fi
 
 
 ###Testa primeira execução###
-if [ ! -d "/work/img" ] ;
+if [ ! -d "/work/img" ] 
 then
     	clear
 	echo "Sistema nao esta instalado, nada sera alterado." 
