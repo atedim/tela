@@ -5,10 +5,10 @@
 ####Funções####
 
 ###Testa ROOT###
-#if [[ $EUID -ne 0 ]]; then
-#   echo "Rode o Script como ROOT" 
-#   exit
-#fi
+if [[ $EUID -ne 0 ]]; then
+   echo "Rode o Script como ROOT" 
+   exit
+fi
 ###Testa ROOT###
 
 ###Testa primeira execução###
