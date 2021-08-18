@@ -17,11 +17,12 @@ fi
 if [ ! -d "/work/img" ] ;
 then
     	clear
-	echo "Sistema não esta instalado, nada será alterado." 
+	echo "Sistema nao esta instalado, nada sera alterado." 
     	echo "Executar com parametro instala." 
 	exit
 else
-    	echo "Verificaçoes iniciais concluidas."
+    	echo "Verificacoes iniciais concluidas."
+fi
 ###Testa primeira execução###
 
 
