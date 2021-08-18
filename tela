@@ -1,0 +1,74 @@
+#!/bin/bash
+
+
+####TODO####
+#criar img
+#verificar se img existe
+#baixar banco de imagens
+#atualizar banco de imagens
+#rotina de auto update
+#definir hal9000 no boot
+
+
+####Váriáveis####
+IMG=/work/img/$2
+BRANCO=/work/img/branco.png
+PANIC=/work/img/panic.png
+####Váriáveis####
+
+
+####Funções####
+
+function f_exibe() 
+{
+	fbi -T 2 -d /dev/fb1 -noverbose -a $IMG
+}
+
+
+function f_limpa() 
+{
+	fbi -T 2 -d /dev/fb1 -noverbose -a $BRANCO
+
+}
+
+
+function f_panic() 
+{
+	fbi -T 2 -d /dev/fb1 -noverbose -a $PANIC
+
+}
+
+
+####Funções####
+
+case $1 in 
+	
+	exibe)
+		f_exibe 
+	;;
+
+	limpa)
+		f_limpa
+	;;
+
+	panic)
+		f_panic
+	;;
+
+		
+	*)
+		clear
+		echo 
+		echo Mostra Imagem ver 0.01 17082021
+		echo 
+		echo 
+		echo  exibe = Mostra a imagem informada como parametro
+		echo     ex: tela exibe 1.png
+		echo 
+		echo  limpa = Define imagem como TODO Branco
+		echo 
+		echo  panic = Define imagem de erro
+		echo
+		exit 1
+
+esac
