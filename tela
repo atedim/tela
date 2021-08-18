@@ -29,6 +29,7 @@ else
 	cd /etc/scripts
 	curl https://raw.githubusercontent.com/atedim/tela/main/tela -o tela
 	chmod u+x tela
+fi
 ###Testa primeira execução###
 
 
