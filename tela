@@ -1,23 +1,62 @@
 #!/bin/bash
 
-
 ####TODO####
-#criar img
 #verificar se img existe
-#baixar banco de imagens
-#atualizar banco de imagens
-#rotina de auto update
-#definir hal9000 no boot
-
 
 ####Váriáveis####
 IMG=/work/img/$2
 BRANCO=/work/img/branco.png
+PRETO=/work/img/preto.png
 PANIC=/work/img/panic.png
 ####Váriáveis####
 
 
 ####Funções####
+
+function f_instala() 
+{
+	apt-get update && apt-get upgrade -y && apt-get autoremove && apt-get autoclean && apt-get clean
+	apt-get install fbi git -y
+	mkdir -p /work/img /work/temp
+	chmod -R 777 /work	
+	chmod -R 777 /etc/scripts	
+	cd /work/temp
+	git clone https://github.com/atedim/tela.git
+	cd tela/img480
+	mv * /work/img
+	cd /work
+	rm -rf /work/temp
+	cd /etc/scripts
+	DATA=`date +%d%m%Y` 
+	mv tela $DATA.tela.old
+	chmod u-x *.old
+	curl https://raw.githubusercontent.com/atedim/tela/main/tela -o tela
+	chmod u+x tela
+	echo fbi -T 2 -d /dev/fb1 -noverbose -a /work/img/hal9000.png  >> ~/.bashrc
+}
+
+
+function f_atualiza() 
+{
+	apt-get update && apt-get upgrade -y && apt-get autoremove && apt-get autoclean && apt-get clean
+	rm -rf /work/img /work/temp
+	mkdir -p /work/img /work/temp
+	chmod -R 777 /work	
+	chmod -R 777 /etc/scripts	
+	cd /work/temp
+	git clone https://github.com/atedim/tela.git
+	cd tela/img480
+	mv * /work/img
+	cd /work
+	rm -rf /work/temp
+	cd /etc/scripts
+	DATA=`date +%d%m%Y` 
+	mv tela $DATA.tela.old
+	chmod u-x *.old
+	curl https://raw.githubusercontent.com/atedim/tela/main/tela -o tela
+	chmod u+x tela
+}
+
 
 function f_exibe() 
 {
@@ -59,7 +98,7 @@ case $1 in
 	*)
 		clear
 		echo 
-		echo Mostra Imagem ver 0.01 17082021
+		echo Mostra Imagem ver 0.02 18082021
 		echo 
 		echo 
 		echo  exibe = Mostra a imagem informada como parametro
