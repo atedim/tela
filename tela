@@ -19,7 +19,7 @@ then
     	clear
 	echo "Sistema não esta instalado, nada será alterado." 
     	echo "Executar com parametro instala." 
-	exit
+#	exit
 else
     echo "Verificaçoes iniciais concluidas."
 ###Testa primeira execução###
