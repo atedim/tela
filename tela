@@ -13,6 +13,17 @@ fi
 ###Testa ROOT###
 
 
+###Testa primeira execução###
+if [ ! -d "/work/img" ] 
+then
+    	clear
+	echo "Sistema não esta instalado, nada será alterado." 
+    	echo "Executar com parametro instala." 
+	exit
+else
+    echo "Verificaçoes iniciais concluidas."
+###Testa primeira execução###
+
 
 ####TODO####
 #verificar se img existe
@@ -120,7 +131,7 @@ case $1 in
 	*)
 		clear
 		echo 
-		echo Mostra Imagem ver 0.02 18082021
+		echo Mostra Imagem ver 0.021 18082021
 		echo 
 		echo 
 		echo  instala = Instala o sistema de tela 
