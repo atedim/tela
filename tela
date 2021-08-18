@@ -2,7 +2,7 @@
 
 ####1st RUN####
 ####As ROOT
-#####bash <(curl -s https://raw.githubusercontent.com/atedim/tela/main/tela)
+#####bash <(curl -s https://raw.githubusercontent.com/atedim/tela/main/tela) instala
 ####1st RUN####
 
 ###Testa ROOT###
@@ -11,26 +11,6 @@ if [[ $EUID -ne 0 ]]; then
    exit
 fi
 ###Testa ROOT###
-
-###Testa primeira execução###
-#if [ -d "/work/img" ] 
-#then
-#    	clear
-#	echo "Sistema ja esta Pronto, nada será alterado." 
-#    	echo "Atualizando o Script Tela." 
-#	cd /etc/scripts
-#	DATA=`date +%d%m%Y` 
-#	mv tela $DATA.tela.old
-#	chmod u-x *.old
-#	curl https://raw.githubusercontent.com/atedim/tela/main/tela -o tela
-#	chmod u+x tela
-#else
-#    	echo "Sistema Limpo, Preparando Ambiente inicial."
-#	mkdir /etc/scripts
-#	cd /etc/scripts
-#	curl https://raw.githubusercontent.com/atedim/tela/main/tela -o tela
-#	chmod u+x tela
-###Testa primeira execução###
 
 
 
