@@ -5,19 +5,8 @@
 #####bash <(curl -s https://raw.githubusercontent.com/atedim/tela/main/tela) instala
 ####1st RUN####
 
-
-#rm -rf LCD-show
-#apt-get install git
-#git clone https://github.com/goodtft/LCD-show.git
-#chmod -R 755 LCD-show
-#cd LCD-show/
-#./LCD35-show
-#./rotate.sh 180
-
-
 ##Voltar para HDMI
 #./LCD-hdmi
-
 
 ###Testa ROOT###
 if [[ $EUID -ne 0 ]]; then
