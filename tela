@@ -5,6 +5,20 @@
 #####bash <(curl -s https://raw.githubusercontent.com/atedim/tela/main/tela) instala
 ####1st RUN####
 
+
+#rm -rf LCD-show
+#apt-get install git
+#git clone https://github.com/goodtft/LCD-show.git
+#chmod -R 755 LCD-show
+#cd LCD-show/
+#./LCD35-show
+#./rotate.sh 180
+
+
+##Voltar para HDMI
+#./LCD-hdmi
+
+
 ###Testa ROOT###
 if [[ $EUID -ne 0 ]]; then
    echo "Rode o Script como ROOT" 
@@ -43,7 +57,14 @@ function f_instala()
 {
 	apt-get update && apt-get upgrade -y && apt-get autoremove && apt-get autoclean && apt-get clean
 	apt-get install fbi git -y
-	mkdir -p /work/img /work/temp
+	rm -rf /etc/LCD-show	
+	mkdir -p /work/img /work/temp /etc/LCD-show
+	cd /etc/
+	git clone https://github.com/goodtft/LCD-show.git
+	chmod -R 755 LCD-show
+	cd /etc/LCD-show/
+	./LCD35-show
+	./rotate.sh 180
 	chmod -R 777 /work	
 	chmod -R 777 /etc/scripts	
 	cd /work/temp
@@ -132,7 +153,7 @@ case $1 in
 	*)
 		clear
 		echo 
-		echo Mostra Imagem ver 0.021 18082021
+		echo Mostra Imagem ver 0.03 19082021
 		echo 
 		echo 
 		echo  instala = Instala o sistema de tela 
