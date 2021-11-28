@@ -46,6 +46,8 @@ function f_instala()
 {
 	apt-get update && apt-get upgrade -y && apt-get autoremove && apt-get autoclean && apt-get clean
 	apt-get install fbi git -y
+	apt-get install libevdev2 libmtdev1 xorg-input-abi-24 xserver-xorg-core -y
+	#apt --fix-broken install
 	rm -rf /etc/LCD-show	
 	mkdir -p /work/img /work/temp /etc/LCD-show
 	cd /etc/
