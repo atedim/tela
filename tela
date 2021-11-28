@@ -51,7 +51,7 @@ function f_instala()
 	rm -rf /etc/LCD-show	
 	mkdir -p /work/img /work/temp /etc/LCD-show
 	cd /etc/
-	git clone https://github.com/goodtft/LCD-show.git
+	git clone https://github.com/atedim/LCD-show.git
 	chmod -R 755 LCD-show
 	cd /etc/LCD-show/
 	./LCD35-show
